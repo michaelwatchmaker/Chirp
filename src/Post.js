@@ -15,7 +15,7 @@ class Post extends React.Component {
                 <div className="post-header">
                     <div className="post-avatar" style={{backgroundColor: this.props.color}}></div>
                     <p className="post-name">{this.props.name}</p>
-                    <p className="post-handle">{this.props.handle}</p>
+                    <p className="post-handle">@{this.props.handle}</p>
                 </div>
                 <p className="post-content">{this.props.content}</p>
             </div>

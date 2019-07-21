@@ -81,7 +81,7 @@ class App extends React.Component {
                         <Post
                             color = "mediumseagreen"
                             name = "Michael Watchmaker"
-                            handle = "@michael"
+                            handle = "michael"
                             content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce luctus nisi sit amet dolor viverra sollicitudin. Mauris et ullamcorper leo. Fusce egestas turpis sit amet vulputate egestas. Sed lacinia dapibus mi sed consectetur. Donec pharetra vitae ex eu pretium. Quisque vitae tincidunt leo. In pharetra purus lectus, nec tempus sapien tempor nec."
                         />
                     </Card>
@@ -89,7 +89,7 @@ class App extends React.Component {
                         <Post
                             color = "coral"
                             name = "Jay Lucien"
-                            handle = "@jay"
+                            handle = "jay"
                             content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                         />
                     </Card>
@@ -97,7 +97,7 @@ class App extends React.Component {
                         <Post
                             color = "mediumpurple"
                             name = "Ethan Faye"
-                            handle = "@ethan"
+                            handle = "ethan"
                             content = "HeyDoctor this is Ethan."
                         />
                     </Card>
@@ -105,7 +105,7 @@ class App extends React.Component {
                         <Post
                             color = "lightskyblue"
                             name = "Mr. Krabs"
-                            handle = "@krabby"
+                            handle = "krabby"
                             content = "That smell. A kind of smelly smell. A smelly smell that smells...smelly. ANCHOVIES!!!!"
                         />
                     </Card>
