@@ -46,13 +46,12 @@ input:focus{
     border-radius: 8px;
     padding: 8px;
     font-size: 14px;
-    background-color: rgb(236, 236, 236);
+    background-color: rgb(240, 240, 240);
     border: none;
 }
 
 .button-primary{
-    height: 32px;
-    padding: 8px 16px;
+    padding: 12px 24px;
     background-color: rgb(45, 143, 255);
     text-transform: uppercase;
     border-radius: 24px;
@@ -61,6 +60,7 @@ input:focus{
     font-weight: 700;
     margin-top: 16px;
     align-self: flex-end;
+    font-size: 14px;
 }
 
 .button-primary:hover{
