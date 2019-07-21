@@ -1,2 +1,2 @@
-# Fwitter
+# Chirp
  Basic twitter clone
