@@ -108,7 +108,7 @@ class App extends React.Component {
                         <input className="input-name" value={this.state.name} onChange={this.nameChange} placeholder="Name"/>
                         <input className="input-handle" value={this.state.handle} onChange={this.handleChange} placeholder="Handle"/>
                     </div>
-                    <input className="input-desc" value={this.state.content} onChange={this.contentChange} placeholder="What's on your mind?"/>
+                    <input className="input-desc" value={this.state.content} onChange={this.contentChange} placeholder="What's happening?"/>
                     <button className="button-primary" type="submit" onClick={this.addData}>Submit</button>
                 </div>
                 <div className="feed-wrap">
