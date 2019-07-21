@@ -74,8 +74,12 @@ input:focus{
 
 
 /* FEED */
-.card{
+.feed-wrap{
     margin-top: 40px;
+}
+
+.card{
+    margin-bottom: 24px;
     padding: 16px;
     width: calc(100% - 32px);
     border: 1px solid lightgray;
@@ -106,4 +110,12 @@ input:focus{
 .post-handle{
     display: inline-block;
     color: rgb(150, 150, 150);
+}
+
+.feed-end{
+    color: grey;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    margin: 24px 0px;
 }

@@ -13,7 +13,7 @@ class Post extends React.Component {
         return(
             <div className="post">
                 <div className="post-header">
-                    <div className="post-avatar"></div>
+                    <div className="post-avatar" style={{backgroundColor: this.props.color}}></div>
                     <p className="post-name">{this.props.name}</p>
                     <p className="post-handle">{this.props.handle}</p>
                 </div>
