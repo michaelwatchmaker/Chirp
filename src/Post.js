@@ -11,10 +11,13 @@ class Post extends React.Component {
 
     render(){
         return(
-            <div className=" card post">
-                <h3>Post:</h3>
-                <p>Title: {this.props.title}</p>
-                <p>Description: {this.props.desc}</p>
+            <div className="post">
+                <div className="post-header">
+                    <div className="post-avatar"></div>
+                    <p className="post-name">{this.props.name}</p>
+                    <p className="post-handle">{this.props.handle}</p>
+                </div>
+                <p className="post-content">{this.props.content}</p>
             </div>
         );
     }

@@ -5,16 +5,24 @@ class PostInput extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            title: '',
+            name: '',
+            handle: '',
             desc: ''
         };
-        this.titleChange = this.titleChange.bind(this)
+        this.nameChange = this.nameChange.bind(this)
+        this.handleChange = this.handleChange.bind(this)
         this.descChange = this.descChange.bind(this)
     }
 
-   titleChange(event){
+   nameChange(event){
         this.setState({
-            title: event.target.value
+            name: event.target.value
+        });
+    }
+
+    handleChange(event){
+        this.setState({
+            handle: event.target.value
         });
     }
 
@@ -27,9 +35,16 @@ class PostInput extends React.Component {
     render(){
         return(
             <div>
-                <input value={this.state.title} onChange={this.titleChange} placeholder="Title"/>
-                <textarea value={this.state.desc} onChange={this.descChange} placeholder="Tell us what you built"/>
-                <p>Title: {this.state.title}</p>
+                <div className="form-wrap">
+                    <div className="profile-wrap">
+                        <input className="input-name" value={this.state.name} onChange={this.nameChange} placeholder="Name"/>
+                        <input className="input-handle" value={this.state.handle} onChange={this.handleChange} placeholder="Handle"/>
+                    </div>
+                    <input className="input-desc" value={this.state.desc} onChange={this.descChange} placeholder="What's on your mind?"/>
+                    <button className="button-primary">Submit</button>
+                </div>
+                <p>Name: {this.state.name}</p>
+                <p>Handle: @{this.state.handle}</p>
                 <p>Description: {this.state.desc}</p>
             </div>
         );
