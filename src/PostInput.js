@@ -1,17 +1,45 @@
 import React from "react";
+import Card from "./Card";
+import Post from "./Post";
 
 class PostInput extends React.Component {
 
     constructor(props){
         super(props);
+
+        this.feedData = [];
+
         this.state = {
+            showData: this.feedData,
             name: '',
             handle: '',
-            desc: ''
+            content: ''
         };
-        this.nameChange = this.nameChange.bind(this)
-        this.handleChange = this.handleChange.bind(this)
-        this.descChange = this.descChange.bind(this)
+
+        this.nameChange = this.nameChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.contentChange = this.contentChange.bind(this);
+
+        this.addData = this.addData.bind(this);
+    }
+
+    addData() {
+        this.feedData.unshift(
+            <Card>
+                <Post 
+                    name = {this.state.name}
+                    handle = {this.state.handle}
+                    content = {this.state.content}
+                />
+            </Card>
+        );
+
+        this.setState({
+            showdata : this.feedData,
+            name: '',
+            handle: '',
+            content: ''
+        });
     }
 
    nameChange(event){
@@ -26,9 +54,9 @@ class PostInput extends React.Component {
         });
     }
 
-    descChange(event){
+    contentChange(event){
         this.setState({
-            desc: event.target.value
+            content: event.target.value
         });
     }
 
@@ -40,12 +68,12 @@ class PostInput extends React.Component {
                         <input className="input-name" value={this.state.name} onChange={this.nameChange} placeholder="Name"/>
                         <input className="input-handle" value={this.state.handle} onChange={this.handleChange} placeholder="Handle"/>
                     </div>
-                    <input className="input-desc" value={this.state.desc} onChange={this.descChange} placeholder="What's on your mind?"/>
-                    <button className="button-primary">Submit</button>
+                    <input className="input-desc" value={this.state.content} onChange={this.contentChange} placeholder="What's on your mind?"/>
+                    <button className="button-primary" type="submit" onClick={this.addData}>Submit</button>
                 </div>
-                <p>Name: {this.state.name}</p>
-                <p>Handle: @{this.state.handle}</p>
-                <p>Description: {this.state.desc}</p>
+                <div>
+                    {this.feedData}
+                </div>
             </div>
         );
     }

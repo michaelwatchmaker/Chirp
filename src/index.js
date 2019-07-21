@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PostInput from "./PostInput";
 import Post from "./Post";
 import Card from "./Card";
 
@@ -8,17 +7,76 @@ class App extends React.Component {
 
     constructor(props){
         super(props);
+
+        this.feedData = [];
+
         this.state = {
-            
-        } 
+            showData: this.feedData,
+            name: '',
+            handle: '',
+            content: ''
+        };
+
+        this.nameChange = this.nameChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.contentChange = this.contentChange.bind(this);
+
+        this.addData = this.addData.bind(this);
+    }
+
+    addData() {
+        this.feedData.unshift(
+            <Card>
+                <Post 
+                    name = {this.state.name}
+                    handle = {this.state.handle}
+                    content = {this.state.content}
+                />
+            </Card>
+        );
+
+        this.setState({
+            showdata : this.feedData,
+            name: '',
+            handle: '',
+            content: ''
+        });
+    }
+
+   nameChange(event){
+        this.setState({
+            name: event.target.value
+        });
+    }
+
+    handleChange(event){
+        this.setState({
+            handle: event.target.value
+        });
+    }
+
+    contentChange(event){
+        this.setState({
+            content: event.target.value
+        });
     }
 
     render(){
         return(
             <div>
                 <h1>Chirp.</h1>
-                <PostInput/>
+                <div className="form-wrap">
+                    <div className="profile-wrap">
+                        <input className="input-name" value={this.state.name} onChange={this.nameChange} placeholder="Name"/>
+                        <input className="input-handle" value={this.state.handle} onChange={this.handleChange} placeholder="Handle"/>
+                    </div>
+                    <input className="input-desc" value={this.state.content} onChange={this.contentChange} placeholder="What's on your mind?"/>
+                    <button className="button-primary" type="submit" onClick={this.addData}>Submit</button>
+                </div>
                 <div className="feed-wrap">
+                    <div>
+                        {this.feedData}
+                    </div>
                     <Card>
                         <Post
                             color = "mediumseagreen"
